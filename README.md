@@ -3,29 +3,29 @@ This Docker will download and install SteamCMD and the according game that is pu
 
 **Please see the different Tags/Branches which games are available.**
 
-## Example Env params for CS:Source
+## Example Env params for The Isle
 | Name | Value | Example |
 | --- | --- | --- |
 | STEAMCMD_DIR | Folder for SteamCMD | /serverdata/steamcmd |
 | SERVER_DIR | Folder for gamefile | /serverdata/serverfiles |
-| GAME_ID | The GAME_ID that the container downloads at startup. If you want to install a static or beta version of the game change the value to: '232330 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install). | 232330 |
-| GAME_NAME | SRCDS gamename | cstrike |
-| GAME_PARAMS | Values to start the server | -secure +maxplayers 32 +map de_dust2 |
+| GAME_ID | The GAME_ID that the container downloads at startup. If you want to install a static or beta version of the game change the value to: '412680 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install). | 412680 |
+| GAME_NAME | SRCDS gamename | theisle |
+| GAME_PARAMS | Values to start the server | -log |
 | UID | User Identifier | 99 |
 | GID | Group Identifier | 100 |
-| GAME_PORT | Port the server will be running on | 27015 |
+| GAME_PORT | Port the server will be running on | 7778 |
 | VALIDATE | Validates the game data | blank |
 | USERNAME | Leave blank for anonymous login | blank |
 | PASSWRD | Leave blank for anonymous login | blank |
 
-## Run example for CS:Source
+## Run example for The Isle
 ```
 docker run --name CSSource -d \
 	-p 27015:27015 -p 27015:27015/udp \
-	--env 'GAME_ID=232330' \
-	--env 'GAME_NAME=cstrike' \
-	--env 'GAME_PORT=27015' \
-	--env 'GAME_PARAMS=-secure +maxplayers 32 +map de_dust2' \
+	--env 'GAME_ID=412680' \
+	--env 'GAME_NAME=theisle' \
+	--env 'GAME_PORT=7778' \
+	--env 'GAME_PARAMS=-log' \
 	--env 'UID=99' \
 	--env 'GID=100' \
 	--volume /path/to/steamcmd:/serverdata/steamcmd \
