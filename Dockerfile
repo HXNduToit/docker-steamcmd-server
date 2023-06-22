@@ -1,6 +1,6 @@
 FROM ich777/debian-baseimage
 
-LABEL org.opencontainers.image.source="https://github.com/HXNduToit/docker-steamcmd-server"
+LABEL org.opencontainers.image.source="https://github.com/HXduToit/docker-steamcmd-server"
 
 RUN apt-get update && \
 	apt-get -y install --no-install-recommends lib32gcc-s1 lib32stdc++6 lib32z1 procps && \
